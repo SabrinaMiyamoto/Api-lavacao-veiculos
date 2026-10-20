@@ -1,0 +1,20 @@
+# Build
+target/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# Logs
+*.log
+
+# Arquivos do projeto / entregas
+*.zip
+*.rar
+
+# Sistema
+.DS_Store
+Thumbs.db

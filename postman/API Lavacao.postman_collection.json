@@ -1,0 +1,297 @@
+{
+  "info": {
+    "name": "API Lavacao",
+    "description": "Colecao de requisicoes para a API de gerenciamento de lavacao de veiculos.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "POST Criar cliente",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Joao da Silva\",\n  \"celular\": \"48999999999\",\n  \"email\": \"joao@email.com\",\n  \"dataCadastro\": \"2026-10-20\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/clientes", "host": ["{{baseUrl}}"], "path": ["clientes"] }
+          }
+        },
+        {
+          "name": "GET Listar clientes",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/clientes", "host": ["{{baseUrl}}"], "path": ["clientes"] }
+          }
+        },
+        {
+          "name": "GET Cliente por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/clientes/1", "host": ["{{baseUrl}}"], "path": ["clientes", "1"] }
+          }
+        },
+        {
+          "name": "PUT Atualizar cliente",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Joao da Silva Atualizado\",\n  \"celular\": \"48988888888\",\n  \"email\": \"joao.novo@email.com\",\n  \"dataCadastro\": \"2026-10-20\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/clientes/1", "host": ["{{baseUrl}}"], "path": ["clientes", "1"] }
+          }
+        },
+        {
+          "name": "DELETE Remover cliente",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/clientes/1", "host": ["{{baseUrl}}"], "path": ["clientes", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Marcas",
+      "item": [
+        {
+          "name": "POST Criar marca",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Volkswagen\"\n}" },
+            "url": { "raw": "{{baseUrl}}/marcas", "host": ["{{baseUrl}}"], "path": ["marcas"] }
+          }
+        },
+        {
+          "name": "GET Listar marcas",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/marcas", "host": ["{{baseUrl}}"], "path": ["marcas"] }
+          }
+        },
+        {
+          "name": "GET Marca por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/marcas/1", "host": ["{{baseUrl}}"], "path": ["marcas", "1"] }
+          }
+        },
+        {
+          "name": "PUT Atualizar marca",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Volkswagen do Brasil\"\n}" },
+            "url": { "raw": "{{baseUrl}}/marcas/1", "host": ["{{baseUrl}}"], "path": ["marcas", "1"] }
+          }
+        },
+        {
+          "name": "DELETE Remover marca",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/marcas/1", "host": ["{{baseUrl}}"], "path": ["marcas", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modelos",
+      "item": [
+        {
+          "name": "POST Criar modelo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descricao\": \"Gol\",\n  \"categoria\": \"PADRAO\",\n  \"marca\": { \"id\": 1 }\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/modelos", "host": ["{{baseUrl}}"], "path": ["modelos"] }
+          }
+        },
+        {
+          "name": "GET Listar modelos",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/modelos", "host": ["{{baseUrl}}"], "path": ["modelos"] }
+          }
+        },
+        {
+          "name": "GET Modelo por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/modelos/1", "host": ["{{baseUrl}}"], "path": ["modelos", "1"] }
+          }
+        },
+        {
+          "name": "PUT Atualizar modelo",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descricao\": \"Gol G6\",\n  \"categoria\": \"MEDIO\",\n  \"marca\": { \"id\": 1 }\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/modelos/1", "host": ["{{baseUrl}}"], "path": ["modelos", "1"] }
+          }
+        },
+        {
+          "name": "DELETE Remover modelo",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/modelos/1", "host": ["{{baseUrl}}"], "path": ["modelos", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cores",
+      "item": [
+        {
+          "name": "POST Criar cor",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Prata\"\n}" },
+            "url": { "raw": "{{baseUrl}}/cores", "host": ["{{baseUrl}}"], "path": ["cores"] }
+          }
+        },
+        {
+          "name": "GET Listar cores",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/cores", "host": ["{{baseUrl}}"], "path": ["cores"] }
+          }
+        },
+        {
+          "name": "GET Cor por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/cores/1", "host": ["{{baseUrl}}"], "path": ["cores", "1"] }
+          }
+        },
+        {
+          "name": "PUT Atualizar cor",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Prata Escuro\"\n}" },
+            "url": { "raw": "{{baseUrl}}/cores/1", "host": ["{{baseUrl}}"], "path": ["cores", "1"] }
+          }
+        },
+        {
+          "name": "DELETE Remover cor",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/cores/1", "host": ["{{baseUrl}}"], "path": ["cores", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Motores",
+      "item": [
+        {
+          "name": "POST Criar motor",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"potencia\": 120,\n  \"tipoCombustivel\": \"FLEX\"\n}" },
+            "url": { "raw": "{{baseUrl}}/motores", "host": ["{{baseUrl}}"], "path": ["motores"] }
+          }
+        },
+        {
+          "name": "GET Listar motores",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/motores", "host": ["{{baseUrl}}"], "path": ["motores"] }
+          }
+        },
+        {
+          "name": "GET Motor por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/motores/1", "host": ["{{baseUrl}}"], "path": ["motores", "1"] }
+          }
+        },
+        {
+          "name": "PUT Atualizar motor",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"potencia\": 150,\n  \"tipoCombustivel\": \"FLEX\"\n}" },
+            "url": { "raw": "{{baseUrl}}/motores/1", "host": ["{{baseUrl}}"], "path": ["motores", "1"] }
+          }
+        },
+        {
+          "name": "DELETE Remover motor",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/motores/1", "host": ["{{baseUrl}}"], "path": ["motores", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Veiculos",
+      "item": [
+        {
+          "name": "POST Criar veiculo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placa\": \"ABC1D23\",\n  \"observacoes\": \"Sem observacoes\",\n  \"cor\": { \"id\": 1 },\n  \"modelo\": { \"id\": 1 },\n  \"proprietario\": { \"id\": 1 }\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/veiculos", "host": ["{{baseUrl}}"], "path": ["veiculos"] }
+          }
+        },
+        {
+          "name": "GET Listar veiculos",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/veiculos", "host": ["{{baseUrl}}"], "path": ["veiculos"] }
+          }
+        },
+        {
+          "name": "GET Veiculo por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/veiculos/1", "host": ["{{baseUrl}}"], "path": ["veiculos", "1"] }
+          }
+        },
+        {
+          "name": "PUT Atualizar veiculo",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placa\": \"XYZ9A87\",\n  \"observacoes\": \"Atualizado\",\n  \"cor\": { \"id\": 1 },\n  \"modelo\": { \"id\": 1 },\n  \"proprietario\": { \"id\": 1 }\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/veiculos/1", "host": ["{{baseUrl}}"], "path": ["veiculos", "1"] }
+          }
+        },
+        {
+          "name": "DELETE Remover veiculo",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/veiculos/1", "host": ["{{baseUrl}}"], "path": ["veiculos", "1"] }
+          }
+        }
+      ]
+    }
+  ]
+}
